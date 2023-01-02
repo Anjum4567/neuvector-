@@ -1,4 +1,4 @@
-defaultNamespace: cattle-neuvector-system
+defaultNamespace: default
 helm:
   releaseName: neuvector-monitoring
   repo: https://neuvector.github.io/neuvector-helm
