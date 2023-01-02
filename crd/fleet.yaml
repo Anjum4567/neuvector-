@@ -1,4 +1,4 @@
-defaultNamespace: default #cattle-neuvector-system
+defaultNamespace: neuvector #cattle-neuvector-system
 helm:
   releaseName: rancher-monitoring-crd
   chart: crd
