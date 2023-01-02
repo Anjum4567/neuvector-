@@ -1,6 +1,6 @@
 defaultNamespace: neuvector #cattle-neuvector-system
 helm:
-  releaseName: rancher-monitoring-crd
+  releaseName: rancher-monitoring
   chart: crd
   repo: https://neuvector.github.io/neuvector-helm
   version: 2.4.0
