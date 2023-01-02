@@ -4,7 +4,7 @@ helm:
 
   releaseName: rancher-monitoring
 
-  repo: https://neuvector.com
+  repo: https://neuvector.github.io/neuvector-helm
 
   chart: core
 
