@@ -3,4 +3,4 @@ helm:
   releaseName: rancher-monitoring-crd
   chart: crd
   repo: https://neuvector.com
-  version: 100.1.2+up19.0.3
+  version: 101.0.1+up2.2.4
