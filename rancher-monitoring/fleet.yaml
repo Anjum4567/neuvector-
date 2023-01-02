@@ -1,8 +1,8 @@
-defaultNamespace: cattle-monitoring-system
+defaultNamespace: cattle-neuvector-system
 helm:
-  releaseName: rancher-monitoring
-  repo: https://charts.rancher.io
-  chart: rancher-monitoring
+  releaseName: neuvector-monitoring
+  repo: https://neuvector.com
+  chart: monitor
   version: 100.1.2+up19.0.3
 diff:
   comparePatches:
