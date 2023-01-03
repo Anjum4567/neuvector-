@@ -79,9 +79,9 @@ spec:
                 fieldRef:
                   fieldPath: status.podIP
           volumeMounts:
-          {{- if .Values.containerd.enabled }}
+          {{- if .Values.k3s.enabled }}
             - mountPath: /var/run/containerd/containerd.sock
-          {{- else if .Values.k3s.enabled }}
+          {{- else if .Values.containerd.enabled }}
             - mountPath: /var/run/containerd/containerd.sock
           {{- else if .Values.bottlerocket.enabled }}
             - mountPath: /var/run/containerd/containerd.sock
@@ -106,11 +106,11 @@ spec:
       volumes:
         - name: runtime-sock
           hostPath:
-          {{- if .Values.k3s.enabled }}            #{{- if .Values.containerd.enabled }}
+          {{- if .Values.k3s.enabled }}            # {{- if .Values.containerd.enabled }}
             path: {{ .Values.k3s.runtimePath }}            # path: {{ .Values.containerd.path }}
           {{- else if .Values.crio.enabled }}
             path: {{ .Values.crio.path }}
-          {{- else if .Values.containerd.enabled }}              #{{- else if .Values.k3s.enabled }}
+          {{- else if .Values.containerd.enabled }}              # {{- else if .Values.k3s.enabled }}
             path: {{ .Values.containerd.path }}            # path: {{ .Values.k3s.runtimePath }}
           {{- else if .Values.bottlerocket.enabled }}
             path: {{ .Values.bottlerocket.runtimePath }}
