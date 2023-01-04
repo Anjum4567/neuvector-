@@ -209,7 +209,7 @@ enforcer:
   # If false, enforcer will not be installed
   enabled: true
   image:
-    repository: neuvector/enforcer
+    repository: rancher/mirrored-neuvector-enforcer             #neuvector/enforcer
     hash:
   updateStrategy:
     type: RollingUpdate
