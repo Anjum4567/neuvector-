@@ -22,7 +22,7 @@ controller:
       maxSurge: 1
       maxUnavailable: 0
   image:
-    repository: rancher/mirrored-neuvector-controller #neuvector/controller
+    repository: neuvector/controller
     hash:
   replicas: 3
   disruptionbudget: 0
@@ -209,7 +209,7 @@ enforcer:
   # If false, enforcer will not be installed
   enabled: true
   image:
-    repository: rancher/mirrored-neuvector-enforcer             #neuvector/enforcer
+    repository: neuvector/enforcer  #rancher/mirrored-neuvector-enforcer             
     hash:
   updateStrategy:
     type: RollingUpdate
