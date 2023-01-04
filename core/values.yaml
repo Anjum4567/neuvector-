@@ -344,9 +344,8 @@ cve:
       # key2: value2
     runAsUser:  # MUST be set for Rancher hardened cluster
 docker:
-  enabled: false
   path: /var/run/docker.sock
-
+  enabled: false
 resources: {}
   # limits:
   #   cpu: 400m
