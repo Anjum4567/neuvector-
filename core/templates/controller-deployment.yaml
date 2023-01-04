@@ -119,9 +119,9 @@ spec:
             - mountPath: /var/neuvector
               name: nv-share
               readOnly: false
-          {{- if .Values.k3s.enabled }}                              # {{- if .Values.containerd.enabled }}    
-            - mountPath: /var/run/containerd/containerd.sock               #    - mountPath: /var/run/containerd/containerd.sock
-          {{- else if .Values.containerd.enabled }}                             #    {{- else if .Values.k3s.enabled }}
+          {{- if .Values.containerd.enabled }}
+            - mountPath: /var/run/containerd/containerd.sock
+          {{- else if .Values.k3s.enabled }}
             - mountPath: /var/run/containerd/containerd.sock
           {{- else if .Values.bottlerocket.enabled }}
             - mountPath: /var/run/containerd/containerd.sock
@@ -169,12 +169,12 @@ spec:
         {{- end }}
         - name: runtime-sock
           hostPath:
-          {{- if .Values.k3s.enabled }}
-            path: {{ .Values.k3s.runtimePath }}
+          {{- if .Values.containerd.enabled }}
+            path: {{ .Values.containerd.path }}
           {{- else if .Values.crio.enabled }}
             path: {{ .Values.crio.path }}
-          {{- else if .Values.containerd.enabled }}
-            path: {{ .Values.containerd.path }}
+          {{- else if .Values.k3s.enabled }}
+            path: {{ .Values.k3s.runtimePath }}
           {{- else if .Values.bottlerocket.enabled }}
             path: {{ .Values.bottlerocket.runtimePath }}
           {{- else }}
