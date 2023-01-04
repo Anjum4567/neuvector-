@@ -355,7 +355,7 @@ resources: {}
   #   memory: 2280Mi
 
 k3s:
-  enabled: false
+  enabled: true     # false
   runtimePath: /run/k3s/containerd/containerd.sock
 
 bottlerocket:
